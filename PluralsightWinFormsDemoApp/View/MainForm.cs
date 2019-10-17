@@ -22,16 +22,20 @@ namespace PluralsightWinFormsDemoApp.View
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            Podcast.ReadPodcasts();
+            //Podcast.ReadPodcasts();
 
-            foreach (var pod in Podcast.Podcasts)
-            {
-                Podcast.UpdatePodcast(pod);
-                listBox1.Items.Add(pod.Title);
-            }
+            //foreach (var pod in Podcast.Podcasts)
+            //{
+            //    Podcast.UpdatePodcast(pod);
+            //    listBox1.Items.Add(pod.Title);
+            //}
         }
 
-       
+        public void AddPodcast(string title)
+        {
+            listBox1.Items.Add(title);
+        }
+
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -101,5 +105,7 @@ namespace PluralsightWinFormsDemoApp.View
                 serializer.Serialize(s, Podcast.Podcasts);
             }
         }
+
+      
     }
 }
