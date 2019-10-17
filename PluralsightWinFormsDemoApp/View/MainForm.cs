@@ -10,11 +10,11 @@ using System.Xml.Serialization;
 
 namespace PluralsightWinFormsDemoApp.View
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form, IMainForm
     {
         private Episode currentEpisode;        
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
