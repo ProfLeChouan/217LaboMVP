@@ -12,7 +12,15 @@ namespace PluralsightWinFormsDemoApp.View
 {
     public partial class MainForm : Form, IMainForm
     {
-        private Episode currentEpisode;        
+        private Episode currentEpisode;
+
+        public int PodcastSelectedIndex => listBox1.SelectedIndex;
+
+        public event EventHandler PodcastSelectedIndexChange
+        {
+            add { listBox1.SelectedIndexChanged += value; }
+            remove { listBox1.SelectedIndexChanged -= value; }
+        }
 
         public MainForm()
         {
@@ -39,13 +47,23 @@ namespace PluralsightWinFormsDemoApp.View
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //listBox2.Items.Clear();
+            //if (listBox1.SelectedIndex == -1) return;
+            //var pod = Podcast.Podcasts[listBox1.SelectedIndex];
+            //foreach (var episode in pod.Episodes)
+            //{
+            //    listBox2.Items.Add(episode.Title);
+            //}
+        }
+
+        public void AddEpisode(string title)
+        {
+            listBox2.Items.Add(title);
+        }
+
+        public void ClearEpisodes()
+        {
             listBox2.Items.Clear();
-            if (listBox1.SelectedIndex == -1) return;
-            var pod = Podcast.Podcasts[listBox1.SelectedIndex];
-            foreach (var episode in pod.Episodes)
-            {
-                listBox2.Items.Add(episode.Title);
-            }
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,6 +124,5 @@ namespace PluralsightWinFormsDemoApp.View
             }
         }
 
-      
     }
 }
