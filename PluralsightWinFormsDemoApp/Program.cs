@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PluralsightWinFormsDemoApp.Presenter;
+using PluralsightWinFormsDemoApp.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,9 @@ namespace PluralsightWinFormsDemoApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            MainForm myMainForm = new MainForm();
+            MainPresenter myMainPresenter = new MainPresenter(myMainForm);
+            Application.Run(myMainForm);
         }
     }
 }
