@@ -1,4 +1,5 @@
-﻿namespace PluralsightWinFormsDemoApp
+﻿namespace PluralsightWinFormsDemoApp.View
+
 {
     partial class NewPodcastForm
     {

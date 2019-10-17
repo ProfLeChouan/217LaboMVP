@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace PluralsightWinFormsDemoApp
+namespace PluralsightWinFormsDemoApp.Model
 {
     public class Podcast
     {

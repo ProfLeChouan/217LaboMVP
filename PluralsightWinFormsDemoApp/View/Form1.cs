@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PluralsightWinFormsDemoApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -7,7 +8,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace PluralsightWinFormsDemoApp
+namespace PluralsightWinFormsDemoApp.View
 {
     public partial class Form1 : Form
     {
