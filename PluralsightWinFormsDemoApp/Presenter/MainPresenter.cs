@@ -15,6 +15,19 @@ namespace PluralsightWinFormsDemoApp.Presenter
         {
             myMainForm = aMainForm;
             myMainForm.Load += LoadPodcasts;
+            myMainForm.PodcastSelectedIndexChange += LoadPodcastEpisodes;
+
+        }
+
+        private void LoadPodcastEpisodes(object sender, EventArgs e)
+        {
+            myMainForm.ClearEpisodes();
+            if (myMainForm.PodcastSelectedIndex == -1) return;
+            var pod = Podcast.Podcasts[myMainForm.PodcastSelectedIndex];
+            foreach (var episode in pod.Episodes)
+            {
+                myMainForm.AddEpisode(episode.Title);
+            }
         }
 
         private void LoadPodcasts(object sender, EventArgs e)
