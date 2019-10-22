@@ -95,11 +95,7 @@ namespace PluralsightWinFormsDemoApp.View
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SaveEpisode();
-            var serializer = new XmlSerializer(Podcast.Podcasts.GetType());
-            using (var s = File.Create("subscriptions.xml"))
-            {
-                serializer.Serialize(s, Podcast.Podcasts);
-            }
+            Podcast.SavePodcasts();
         }
     }
 }

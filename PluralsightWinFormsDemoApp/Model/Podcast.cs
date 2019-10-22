@@ -71,5 +71,14 @@ namespace PluralsightWinFormsDemoApp.Model
                 Podcasts =  defaultFeeds.Select(f => new Podcast() { SubscriptionUrl = f }).ToList();
             }
         }
+
+        public static void SavePodcasts()
+        {
+            var serializer = new XmlSerializer(Podcast.Podcasts.GetType());
+            using (var s = File.Create("subscriptions.xml"))
+            {
+                serializer.Serialize(s, Podcast.Podcasts);
+            }
+        }
     }
 }
